@@ -22,8 +22,8 @@
 #  domain_id        :integer
 #
 
-module Faalis::Blog
-  class Post < ActiveRecord::Base
+module Faalis::ContactUs
+  class Message < ActiveRecord::Base
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::SiteAware
 

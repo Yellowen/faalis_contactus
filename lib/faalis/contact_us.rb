@@ -1,9 +1,7 @@
 require 'faalis'
-require 'redcarpet'
-require 'faalis/tags'
 
 module Faalis
-  module Blog
+  module ContactUs
   end
 end
 
