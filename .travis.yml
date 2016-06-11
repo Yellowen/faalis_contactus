@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+  - 2.2.2
+services:
+  - postgresql
+
+before_install:
+  - "export DISPLAY=:99.0"
+  - gem install bundler
+
+addons:
+  postgresql: "9.4"
+
+before_script:
+  - psql -c 'create database faalis_page_test;' -U postgres
+  - rm test/dummy/config/database.yml
+  - cp -v test/dummy/config/database.yml.travis test/dummy/config/database.yml
+  - bundle exec rake app:db:migrate
+
+install: bundle
+script: xvfb-run bundle exec rake test

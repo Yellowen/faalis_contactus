@@ -1,0 +1,30 @@
+<section id="post" class="post">
+  <arcile class="post">
+
+    <h1 class="post_title">
+      <%= @post.title %>
+    </h1>
+    <div class="post content">
+      <%= @post.content.html_safe%>
+    </div>
+  </arcile>
+  <% @comments.each do |comment| %>
+    <article>
+      <h3>
+        <%= comment.title %>
+      </h3>
+      <p>
+        <%= comment.body %>
+      </p>
+    </article>
+  <% end%>
+
+  <comment-form>
+    <%= form_for @post.comments.new url: {action: "add_comment"} do |f| %>
+      Title: <%=  f.text_field :comment[title] %><br>
+      Comment: <%= f.text_area :comment[comment] %><br>
+      <%= submit_tag 'Add Comment', :class => "submit" %>
+    <% end  %>
+  </comment-form>
+
+</section>
