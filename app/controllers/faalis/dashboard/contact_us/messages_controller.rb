@@ -1,5 +1,5 @@
-class Faalis::Dashboard::Blog::PostsController < ::Dashboard::ApplicationController
-  engine 'Faalis::Blog::Engine'
+class Faalis::Dashboard::ContactUs::PostsController < ::Dashboard::ApplicationController
+  engine 'Faalis::ContactUs::Engine'
 
   in_index do |f|
     f.attributes(:title, :permalink, :category_name, :site, :members_only, :allow_comments)

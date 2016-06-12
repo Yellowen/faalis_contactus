@@ -1,7 +1,7 @@
 module Faalis
-  module Blog
+  module ContactUs
     class Engine < ::Rails::Engine
-      isolate_namespace Faalis::Blog
+      isolate_namespace Faalis::ContactUs
 
       engine_name 'faalis_blog'
 

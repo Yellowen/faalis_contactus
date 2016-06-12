@@ -1,5 +1,5 @@
 module Faalis::ContactUs
-  class PostPolicy < ::ApplicationPolicy
+  class MessagePolicy < ApplicationPolicy
     class Scope < Scope
       def resolve
         scope

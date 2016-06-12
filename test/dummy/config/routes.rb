@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   sites(self) do
-    mount Faalis::Blog::Engine => "/"
+    mount Faalis::ContactUs::Engine => "/"
   end
 
   root 'welcome#index'

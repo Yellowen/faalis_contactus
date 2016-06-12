@@ -1,9 +1,9 @@
-class CreateFaalisBlogPosts < ActiveRecord::Migration
+class CreateFaalisContactUsPosts < ActiveRecord::Migration
   def change
     args = {}
     args[:id] = :uuid if Faalis::Engine.use_uuid
 
-    create_table :faalis_blog_posts, **args do |t|
+    create_table :faalis_contact_us_messages, **args do |t|
       t.string :title
       t.string :permalink
       t.text   :raw_content

@@ -1,13 +1,14 @@
-Faalis::Routes.draw(::Faalis::Blog::Engine) do
+Faalis::Routes.draw(::Faalis::ContactUs::Engine) do
 
   plugin do
-    get "#{Faalis::Blog::Engine.posts_url_prefix}", to: 'posts#index', as: :index
-    get "#{Faalis::Blog::Engine.posts_url_prefix}/:permalink", to: 'posts#show', as: :post_show
-    get "#{Faalis::Blog::Engine.categories_url_prefix}/:permalink", to: 'categories#show', as: :category_show
+    get "#{Faalis::ContactUs::Engine.posts_url_prefix}", to: 'posts#index', as: :index
+    get "#{Faalis::ContactUs::Engine.posts_url_prefix}/:permalink", to: 'posts#show', as: :post_show
+    get "#{Faalis::ContactUs::Engine.categories_url_prefix}/:permalink", to: 'categories#show', as: :category_show
   end
 
   faalis do
-    in_dashboard do |app|
+    in_dashboard do
+    resources :messages |app|
       namespace :blog do
         resources :categories
         resources :posts

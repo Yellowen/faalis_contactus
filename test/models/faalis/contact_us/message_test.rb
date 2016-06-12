@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Faalis::Blog
+module Faalis::ContactUs
   class PostTest < ActiveSupport::TestCase
 
-    @@subject = ::Faalis::Blog::Post
+    @@subject = ::Faalis::ContactUs::Post
 
     before do
       @user     = Fabricate(:user, password: '11111111',
