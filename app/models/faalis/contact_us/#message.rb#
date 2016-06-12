@@ -33,7 +33,7 @@ module Faalis::ContactUs
     
     scope :ordered, -> { order('created_at DESC') }
 
-
+    
     validates_presence_of :title, :permalink, :user, :category
 
 
