@@ -1,8 +1,8 @@
 Faalis::Routes.draw(::Faalis::ContactUs::Engine) do
 
   plugin do
-    get "#{Faalis::ContactUs::Engine.posts_url_prefix}", to: 'posts#index', as: :index
-    get "#{Faalis::ContactUs::Engine.posts_url_prefix}/:permalink", to: 'posts#show', as: :post_show
+    get "#{Faalis::ContactUs::Engine.posts_url_prefix}", to: 'messages#index', as: :index
+    get "#{Faalis::ContactUs::Engine.posts_url_prefix}/:permalink", to: 'message#show', as: :post_show
     get "#{Faalis::ContactUs::Engine.categories_url_prefix}/:permalink", to: 'categories#show', as: :category_show
   end
 

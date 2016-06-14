@@ -6,33 +6,35 @@ module Faalis::ContactUs
     layout Engine.default_layout
 
     def index
-      @posts = Post.published.ordered
-      @posts = @posts.where(members_only: false) unless user_signed_in?
-      @posts = @posts.page(params[:page]).per(5)
+      @messages = Message.ordered
+      @messages = @messages.page(params[:page]).per(5)
     end
 
     def show
-      posts = Post.published
+      messages = Message
 
       puts "<<<<<<<<<< " * 100, SiteFramework.current_site.id
-      @post = posts.find_by(permalink: params[:permalink])
+      @message = messages.find_by(permalink: params[:permalink])
       return
 
       if user_signed_in?
-        @post = posts.find_by(permalink: params[:permalink])
-
-      else
-        @post = posts.where(members_only: false) \
-                .find_by(permalink: params[:permalink])
+        @message = messages.find_by(permalink: params[:permalink])
       end
 
       # TODO: redirect to 404 page or show a message indicating
       # that the post you're looking for does not exists
-      @comments = @post.comments.punlished.ordered
     end
 
     def create
-      @comment = commentable.comments.create
+      @message = Message.new(params[:id])
+
+      respond to do |format|
+        if @message.save
+          format.json { render :show, status: :created  }
+        else
+          format.json { render @message.errors, status: :unprocessable_entity}
+        end
+     end
 
     end
 
