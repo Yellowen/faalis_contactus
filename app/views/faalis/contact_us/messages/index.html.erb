@@ -1,19 +1,4 @@
 <section id="messages" class="messages">
-  <% @messages.each do |message| %>
-    <article class="message">
-      <h2 class="message_email">
-        <%= message.email %>
-      </h2>
-      <h2 class="message_name">
-        <%= message.name %>
-      </h2>
 
-      <div class="message_content">
-        <%= message.exteradata.html_safe %>
-      </div>
-    </article>
-  <% end %>
-  <hr/>
-  <%= paginate @messages %>
-  <%= page_entires_info @messages, :window => 3 %>
+
 </section>
