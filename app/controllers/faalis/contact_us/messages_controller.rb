@@ -1,7 +1,7 @@
 require_dependency "faalis/application_controller"
 
 module Faalis::ContactUs
-  class PostsController < ::ApplicationController
+  class MessagesController < ::ApplicationController
 
     layout Engine.default_layout
 
@@ -22,7 +22,7 @@ module Faalis::ContactUs
       end
 
       # TODO: redirect to 404 page or show a message indicating
-      # that the post you're looking for does not exists
+      # that the message you're looking for does not exists
     end
 
     def create

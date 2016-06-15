@@ -8,12 +8,12 @@
         <%= message.name %>
       </h2>
 
-      <div class="message content">
+      <div class="message_content">
         <%= message.exteradata.html_safe %>
       </div>
     </article>
   <% end %>
   <hr/>
-  <%= paginate @posts %>
-  <%= page_entires_info @posts, :window => 3 %>
+  <%= paginate @messages %>
+  <%= page_entires_info @messages, :window => 3 %>
 </section>
