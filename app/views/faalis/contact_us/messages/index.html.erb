@@ -1,4 +1,16 @@
 <section id="messages" class="messages">
+  <h1>Contact Us</h1>
+  <%= semantic_form_for @contact do |f|%>
+
+    <%= f.inputs do %>
+      <%= f.input :name, :input_html => { :class => 'name', :maxlength => 20, :required }%>
+      <%= f.input :email, :required %>
+      <%= f.input :extradata, :input_html => { :class => 'extradata', :rows => 10, :cols => 20, :required } %>
+    <% end  %>
+
+    <%= f.action :submit, :as => button %>
+
+  <% end %>
 
 
 </section>

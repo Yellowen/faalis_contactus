@@ -5,7 +5,7 @@ class CreateFaalisContactUsPosts < ActiveRecord::Migration
 
     create_table :faalis_contact_us_messages, **args do |t|
       t.string :name
-      t.string   :email
+      t.string :email
       t.json   :exteradata
 
       if  Faalis::Engine.use_uuid
